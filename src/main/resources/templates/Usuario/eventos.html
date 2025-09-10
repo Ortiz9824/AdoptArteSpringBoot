@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">AdoptARTE</title>
+
+    <!-- Bootstrap y librerías externas -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS local -->
+    <link th:href="@{/css/homepage.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/}">
+                    <img th:src="@{/imagenes/Logo.png}" alt="AdoptARTE Logo" height="110">
+                </a>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" th:href="@{/adopcion}">Adopción</a></li>
+                        <li><a class="nav-link" th:href="@{/eventos}">Eventos</a></li>
+                        <li><a class="nav-link" th:href="@{/refugio}">Refugios</a></li>
+                        <li><a class="nav-link" th:href="@{/afiliados}">Afiliados</a></li>
+                        <li><a class="nav-link" th:href="@{/donaciones}">Donaciones</a></li>
+                        <li><a class="nav-link" th:href="@{/contacto}">Contacto</a></li>
+
+                        <!-- Condicional de sesión -->
+                        <li th:if="${session.usuario != null}">
+                            <form th:action="@{/logout}" method="post">
+                                <button class="btn btn-danger mx-2" type="submit">Cerrar Sesión</button>
+                            </form>
+                        </li>
+                        <li th:unless="${session.usuario != null}">
+                            <a th:href="@{/login}" class="btn btn-light mx-2">Iniciar Sesión</a>
+                        </li>
+                        <li th:unless="${session.usuario != null}">
+                            <a th:href="@{/registrar}" class="btn btn-dark">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido dinámico -->
+        <main class="container py-5">
+            <section layout:fragment="contenido"></section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>AdoptARTE 2025 - Developed by Linda Ortiz / Oscar Venegas © Todos los derechos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>
+
