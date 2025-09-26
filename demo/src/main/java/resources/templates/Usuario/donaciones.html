@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<body>
+    <section layout:fragment="contenido">
+
+        <!-- Inspiración -->
+        <section class="inspiracion-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Imagen de gatos -->
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img th:src="@{/imagenes/Gtico Blanco.jpg}" class="img-fluid rounded shadow" alt="Gatos esperando un hogar">
+                    </div>
+
+                    <!-- Mensajes inspiradores -->
+                    <div class="col-md-6">
+                        <h1>¡Tu ayuda hace la diferencia!</h1>
+                        <p class="fs-5">Cada donación alimenta a un animal, proporciona cuidados médicos y abre la puerta hacia un nuevo hogar.</p>
+                        <p class="fs-5">Gracias a ti, miles de historias tienen un final feliz.</p>
+                        <p class="fs-5 text-muted fst-italic">"El amor no se compra, se adopta."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Donaciones -->
+        <section class="container my-5" id="donaciones">
+            <div class="row align-items-center">
+                <!-- Información -->
+                <div class="col-md-6 mb-4">
+                    <h1>¡Ayúdanos a Cambiar Vidas!</h1>
+                    <img th:src="@{/imagenes/Perro3.jpg}" class="img-fluid rounded"
+                         alt="Donación de alimentos a mascotas">
+                    <p class="fs-5">Con tu ayuda podemos alimentar, cuidar y encontrar un hogar para cientos de animales abandonados. Puedes donar dinero o alimentos.</p>
+                </div>
+
+                <!-- Formulario -->
+                <div class="col-md-6">
+                    <div class="card shadow p-4">
+                        <h4 class="text-center mb-3">Donar</h4>
+
+                        <!-- Tipo de donación -->
+                        <div class="mb-3">
+                            <div class="btn-group w-100" role="group">
+                                <button type="button" class="btn btn-outline-primary active" id="btnDinero">Dinero</button>
+                                <button type="button" class="btn btn-outline-primary" id="btnAlimentos">Alimentos</button>
+                            </div>
+                        </div>
+
+                        <!-- Donación Dinero -->
+                        <div id="formDinero">
+                            <div class="mb-3">
+                                <label class="form-label">Selecciona un monto</label>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-outline-secondary">$10.000</button>
+                                    <button class="btn btn-outline-secondary">$20.000</button>
+                                    <button class="btn btn-outline-secondary">$50.000</button>
+                                    <button class="btn btn-outline-secondary">$100.000</button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="otroMonto" class="form-label">Otro monto</label>
+                                <input type="number" class="form-control" id="otroMonto" placeholder="$">
+                            </div>
+                        </div>
+
+                        <!-- Donación Alimentos -->
+                        <div id="formAlimentos" style="display: none;">
+                            <div class="mb-3">
+                                <label for="peso" class="form-label">Cantidad en kilos (Kg)</label>
+                                <input type="number" class="form-control" id="peso" placeholder="Ej: 5">
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a th:href="@{/pagina-construccion}" class="btn btn-success w-100">Donar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Script -->
+        <script th:inline="javascript">
+            const btnDinero = document.getElementById('btnDinero');
+            const btnAlimentos = document.getElementById('btnAlimentos');
+            const formDinero = document.getElementById('formDinero');
+            const formAlimentos = document.getElementById('formAlimentos');
+
+            btnDinero.addEventListener('click', () => {
+                btnDinero.classList.add('active');
+                btnAlimentos.classList.remove('active');
+                formDinero.style.display = 'block';
+                formAlimentos.style.display = 'none';
+            });
+
+            btnAlimentos.addEventListener('click', () => {
+                btnAlimentos.classList.add('active');
+                btnDinero.classList.remove('active');
+                formDinero.style.display = 'none';
+                formAlimentos.style.display = 'block';
+            });
+        </script>
+
+    </section>
+</body>
+</html>

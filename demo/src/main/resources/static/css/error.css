@@ -1,0 +1,27 @@
+body {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #4f7ea8;
+}
+
+.error-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.error-image {
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #4f7ea8;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

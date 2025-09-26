@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #4f7ea8; /* tu azul personalizado */
+}
+.refugio-card {
+    max-height: 300px; /* Ajusta a lo que necesites */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.refugio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}

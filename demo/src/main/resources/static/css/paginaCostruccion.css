@@ -1,0 +1,52 @@
+body {
+    background: rgb(241, 244, 247);
+    font-family: 'Times New Roman', cursive, sans-serif;
+    text-align: center;
+    padding: 50px;
+    color: rgb(13, 89, 189);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+}
+
+.mascota-img {
+    width: 220px;
+    animation: wag 1.5s infinite ease-in-out;
+}
+
+@keyframes wag {
+    0% {
+        transform: rotate(-0.5deg);
+    }
+
+    50% {
+        transform: rotate(0.5deg);
+    }
+
+    100% {
+        transform: rotate(-0.5deg);
+    }
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #b20fef;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #fd0ab4;
+}

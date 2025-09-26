@@ -1,0 +1,161 @@
+/*Estilos cards para la sección de adopción */
+
+.tinder-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.tinder-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Info en parte superior de la imagen */
+.tinder-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px 16px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 100%);
+  z-index: 2;
+  font-weight: bolder;
+}
+
+.tinder-info h5 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.tinder-info small {
+  font-weight: normal;
+}
+
+.tinder-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Botones en parte inferior derecha de las CARD*/
+.tinder-actions {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 3;
+}
+
+.tinder-actions button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  border-radius: 60%;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #6c5fe0;
+  
+}
+
+.tinder-actions button:hover {
+  background: #ffcad4;
+  color: white;
+}
+
+/* Botón activo de filtro */
+.btn-dark {
+  background-color: #4f7ea8;
+  border: none;
+}
+
+/* Botones de orden y búsqueda */
+.btn-group .btn {
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+input[type="text"] {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+}
+
+/* Esto aplicará a ambos elementos por igual */
+.btn-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #17a2b8; /* Color de fondo azul info */
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none; /* Esto es importante para el enlace <a> */
+  font-size: 1rem;
+}
+
+/* Estilos para el ícono dentro del botón/enlace */
+.btn-info i {
+  font-size: 1.2rem;
+}
+
+/* Estilos para el hover */
+.btn-info:hover {
+  background-color: #138496;
+  color: white;
+}
+
+/* Paginación */
+.pagination .page-link {
+  color: #4f7ea8;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.pagination .page-item.active .page-link {
+  background-color: #4f7ea8;
+  border-color: #4f7ea8;
+  color: white;
+}
+.pagination .page-link:hover {
+  background-color: #e0ecf6;
+}
+
+/* Adaptable a móviles */
+@media (max-width: 768px) {
+  .col-md-3 {
+    margin-bottom: 20px;
+  }
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Ancho limitado del contenedor general */
+.container {
+  max-width: 95%;
+}
+
+/* Aumentar paddings y altura de filtros */
+.btn-lg {
+  padding: 10px 22px;
+  font-size: 1rem;
+}
+
+input.form-control-lg {
+  padding: 10px 16px;
+}
+
+/* Cards con menos margen lateral en pantallas grandes */
+@media (min-width: 992px) {
+  .col-lg-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

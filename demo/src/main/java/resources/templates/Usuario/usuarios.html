@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<body>
+    <section layout:fragment="contenido">
+        <h1 class="mb-4">Usuarios</h1>
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Documento</th>
+                    <th>Email</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Tarjeta Profesional</th>
+                    <th>Rol ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.id}">ID</td>
+                    <td th:text="${usuario.nombre}">Nombre</td>
+                    <td th:text="${usuario.apellido}">Apellido</td>
+                    <td th:text="${usuario.documento}">Documento</td>
+                    <td th:text="${usuario.email}">Email</td>
+                    <td th:text="${usuario.direccion}">Dirección</td>
+                    <td th:text="${usuario.telefono}">Teléfono</td>
+                    <td th:text="${usuario.tarjetaProfesional}">Tarjeta Profesional</td>
+                    <td th:text="${usuario.rolId}">Rol ID</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

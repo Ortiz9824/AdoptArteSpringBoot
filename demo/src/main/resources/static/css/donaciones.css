@@ -1,0 +1,61 @@
+/* ===========================================
+  Sección de inspiración (primera imagen + texto)
+   =========================================== */
+.inspiracion-section {
+  background-color: #f8f9fa;
+  /* Fondo claro para la sección de inspiración */
+}
+
+.inspiracion-section p {
+  color: #333;
+  /* Color de texto para mayor legibilidad */
+}
+
+
+/* ===========================================
+  Tarjeta de donación (formulario)
+   =========================================== */
+.donation-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Fondo blanco semitransparente */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  padding: 30px;
+  /* Espaciado interno */
+  color: #333;
+  /* Color del texto */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  /* Sombra suave */
+}
+
+.donation-box h4 {
+  font-weight: 600;
+  color: #1d3557;
+  /* Azul oscuro para títulos */
+}
+
+/* Botones de selección de tipo de donación */
+.btn-toggle-group .btn {
+  border-radius: 20px;
+  margin: 5px;
+}
+
+/* Botón principal para donar */
+.donation-box .btn-donate {
+  background-color: #007bff;
+  /* Azul Bootstrap */
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+/* Campos de texto y selección del formulario */
+.donation-box input,
+.donation-box select {
+  border-radius: 10px;
+  /* Bordes redondeados suaves */
+}
+
+#donaciones .col-md-6 {
+  min-height: 100%;
+}

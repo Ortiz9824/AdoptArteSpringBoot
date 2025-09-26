@@ -1,0 +1,12 @@
+# Query: poryectojpa.
+# ContextLines: 1
+
+2 resultados - Archivos de 2
+
+src\main\java\com\poryectojpa\demo\models\Usuario.java:
+  1: package com.proyectojpa.demo.models;
+  2  
+
+src\test\java\com\poryectojpa\demo\CruzOzzyApplicationTests.java:
+  1: package com.proyectojpa.demo;
+  2  

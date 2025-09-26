@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout}">
+<head>
+    <title>Eventos - AdoptArte</title>
+    <link rel="stylesheet" th:href="@{/css/Eventos.css}">
+</head>
+<body>
+    <main th:fragment="content">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mb-5">Eventos</h1>
+                    
+                    <div class="row" th:if="${eventos != null and !eventos.empty}">
+                        <div th:each="evento : ${eventos}" class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${evento.nombreEvento}"></h5>
+                                    <p class="card-text">
+                                        <strong>Fecha:</strong> <span th:text="${evento.fechaEvento}"></span><br>
+                                        <strong>Dirección:</strong> <span th:text="${evento.direccionEvento}"></span>
+                                    </p>
+                                    <p class="card-text" th:text="${evento.descripcionEvento}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div th:if="${eventos == null or eventos.empty}" class="text-center">
+                        <div class="alert alert-info">
+                            <h4>No hay eventos disponibles</h4>
+                            <p>Próximamente tendremos eventos para compartir contigo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

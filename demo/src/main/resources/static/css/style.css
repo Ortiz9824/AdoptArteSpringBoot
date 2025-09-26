@@ -1,0 +1,123 @@
+/* Estilos principales para AdoptArte */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.carousel-container {
+    max-width: 500px;
+}
+
+.map-fixed-size {
+    width: 600px;
+    height: 450px;
+}
+
+/* Estilos para las cards de mascotas */
+.tinder-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tinder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tinder-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.tinder-info {
+    padding: 15px;
+}
+
+.tinder-info h5 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.tinder-info p {
+    color: #666;
+    margin: 0;
+}
+
+.tinder-actions {
+    padding: 10px 15px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.btn-info:hover {
+    background: #138496;
+    color: white;
+}
+
+/* Estilos para el login */
+.login-f {
+    min-height: 100vh;
+}
+
+.login-container {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.logo {
+    max-height: 60px;
+}
+
+/* Estilos para formularios */
+.form-control:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25);
+}
+
+.btn-primary {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-primary:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Estilos para la página de construcción */
+.text-orange {
+    color: #fd7e14 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-fixed-size {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .carousel-container {
+        max-width: 100%;
+    }
+}

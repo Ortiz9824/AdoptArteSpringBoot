@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout}">
+<head>
+    <title th:text="'Detalle - ' + ${mascota.nombre}">Detalle Mascota - AdoptArte</title>
+</head>
+<body>
+    <main th:fragment="content">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img th:src="${mascota.urlImagenMascota}" 
+                         th:alt="${mascota.nombre}" 
+                         class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h1 th:text="${mascota.nombre}"></h1>
+                    <p class="lead" th:text="${mascota.edad} + ' años'"></p>
+                    <p th:text="${mascota.raza}"></p>
+                    <p th:text="${mascota.descripcion}"></p>
+                    
+                    <div class="mt-4">
+                        <a th:href="@{/adopcion/procesar-adopcion/{id}(id=${mascota.id})}" 
+                           class="btn btn-primary btn-lg">Adoptar</a>
+                        <a th:href="@{/adopcion}" class="btn btn-outline-secondary btn-lg ms-2">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

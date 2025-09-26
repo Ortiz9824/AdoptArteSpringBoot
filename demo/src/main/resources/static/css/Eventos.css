@@ -1,0 +1,78 @@
+.navbar {
+    background-color: #4f7ea8; /* tu azul personalizado */
+}
+/* Estilos para la sección de eventos */
+.evento-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.evento-card img {
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text i {
+    color: #dc3545;
+    margin-right: 6px;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .evento-card img {
+        height: 200px;
+    }
+}
+
+
+
+
+
+
+/* FOOTER */
+/* PIE DE PÁGINA estilizado con íconos Font Awesome */
+.footer {
+  background-color: #4f7ea8;         /* Fondo azul uniforme */
+  color: white;                      /* Texto blanco */
+  text-align: center;                /* Todo centrado */
+  padding: 20px 0;                   /* Espaciado arriba y abajo */
+  font-size: 14px;
+}
+
+/* Contenedor de íconos */
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+/* Estilo de cada ícono */
+.footer .social-icons a {
+  color: white;                      /* Íconos blancos */
+  margin: 0 10px;                    /* Separación entre ellos */
+  font-size: 20px;                   /* Tamaño de íconos */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.footer .social-icons a:hover {
+  color: #d0e8f2;                    /* Color claro al hacer hover */
+}

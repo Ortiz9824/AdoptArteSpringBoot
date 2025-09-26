@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar Sesión - AdoptArte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/inicio.css}">
+</head>
+<body>
+    <div class="container login-f h-screen d-flex justify-content-center align-items-center">
+        <div class="row login-container shadow rounded overflow-hidden w-100" style="max-width: 900px;">
+
+            <!-- Columna izquierda: formulario -->
+            <div class="col-md-6 p-4 bg-white">
+                <!-- Logo que redirige al home -->
+                <a th:href="@{/}">
+                    <img th:src="@{/images/Logo.png}" alt="AdoptArte Logo" class="logo mb-3">
+                </a>
+
+                <h4 class="mb-4">Accede a tu cuenta</h4>
+
+                <!-- Mostrar mensaje del controlador si las credenciales fallan -->
+                <div th:if="${mensaje}" class="alert alert-danger" th:text="${mensaje}"></div>
+
+                <!-- FORMULARIO -->
+                <form method="post" th:action="@{/login/acceder}">
+                    <!-- EMAIL -->
+                    <div class="mb-3">
+                        <label for="usuario" class="form-label">Correo electrónico</label>
+                        <div class="input-group">
+                            <input type="email" name="usuario" class="form-control" id="usuario"
+                                placeholder="ejemplo@correo.com" required
+                                oninvalid="this.setCustomValidity('Por favor, introduce tu correo electrónico')"
+                                oninput="this.setCustomValidity('')">
+                            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- CONTRASEÑA -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" name="password" class="form-control" id="password"
+                                placeholder="Ingresa la contraseña" required
+                                oninvalid="this.setCustomValidity('Por favor, introduce tu contraseña')"
+                                oninput="this.setCustomValidity('')">
+                            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- OLVIDÓ CONTRASEÑA -->
+                    <div class="mb-3 text-end">
+                        <a href="#" class="text-primary">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- BOTÓN LOGIN -->
+                    <div class="d-grid mb-2">
+                        <button type="submit" class="btn btn-primary w-100 login-btn">Inicia sesión</button>
+                    </div>
+
+                    <!-- BOTÓN REGISTRO -->
+                    <div class="text-center">
+                        <a th:href="@{/registrar}" class="btn btn-outline-warning w-100 text-orange">Regístrate</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Columna derecha: imagen -->
+            <div class="col-md-6 d-none d-md-block p-0">
+                <img th:src="@{/images/login.png}" alt="Imagen lateral login" class="img-fluid h-100 w-100 object-fit-cover">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

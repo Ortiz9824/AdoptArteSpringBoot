@@ -1,0 +1,160 @@
+/* Fuente base */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #c0d9f0;
+}
+
+/* ENCABEZADO con logo */
+.encabezado {
+  background-color: #4f7ea8;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.logo {
+  height: 60px;
+}
+
+/* CONTENEDOR principal */
+.registro-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* IMAGEN lateral */
+.registro-imagen img {
+  height: 100%;
+  object-fit: cover;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2)
+}
+
+/* FORMULARIO compacto */
+.registro-formulario {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.registro-formulario h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilo  formulario */
+.registro-formulario input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Campo contenedor para posicionar íconos */
+.campo {
+  position: relative;
+}
+
+/* Input de contraseña con espacio para el ícono */
+.campo input[type="password"] {
+  padding-right: 40px;
+}
+
+/* Ícono de mostrar/ocultar contraseña */
+.toggle-password {
+  position: absolute;
+  top: 30%;
+  bottom: auto;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input[type="password"] {
+  padding-right: 40px;
+  margin-bottom: 0; /* evitamos doble margen */
+}
+
+.input-group .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+}
+
+
+/* BOTONES */
+.btn-registrar {
+  width: 100%;
+  background-color: #2386aa;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-registrar:hover {
+  background-color: #1c6e90;
+}
+
+.btn-iniciar {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  color: #2386aa;
+  border: 1px solid #4f7ea8;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-iniciar:hover {
+  background-color: #eaf6fa;
+}
+
+/* Estilo para mensajes de error sin afectar el layout */
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin: 4px 0 0 0;
+  display: block;
+  min-height: px; 
+}
+
+
+/* Responsive: ocultar imagen en pantallas pequeñas */
+@media (max-width: 967px) {
+  .registro-imagen {
+    display: none;
+  }
+}

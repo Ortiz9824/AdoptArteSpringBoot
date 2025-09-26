@@ -1,0 +1,14 @@
+.full-height-card {
+    height: 100%;
+}
+
+.card-contact {
+    height: 100%;
+}
+
+.card-contact .img-full {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem; /* opcional para mantener esquinas redondeadas */
+}

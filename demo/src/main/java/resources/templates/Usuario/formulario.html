@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Adopción</title>
+    <link rel="stylesheet" th:href="@{/estilos/formularioAdopcion.css}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="mb-4">Formulario de Adopción</h2>
+
+    <!-- Formulario con Thymeleaf -->
+    <form th:action="@{/formulario}" th:object="${formularioAdopcion}" method="post" novalidate class="needs-validation">
+
+        <div class="form-group mb-3">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" th:field="*{ciudad}" id="ciudad" class="form-control" maxlength="45" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('ciudad')}" th:errors="*{ciudad}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="localidad">Localidad</label>
+            <input type="text" th:field="*{localidad}" id="localidad" class="form-control" maxlength="45" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('localidad')}" th:errors="*{localidad}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="barrio">Barrio</label>
+            <input type="text" th:field="*{barrio}" id="barrio" class="form-control" maxlength="45" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('barrio')}" th:errors="*{barrio}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="ocupacion">Ocupación</label>
+            <input type="text" th:field="*{ocupacion}" id="ocupacion" class="form-control" maxlength="45" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('ocupacion')}" th:errors="*{ocupacion}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="personas">Número de personas con las que convive</label>
+            <input type="number" th:field="*{numPersonasConvive}" id="personas" class="form-control" min="1" max="99" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('numPersonasConvive')}" th:errors="*{numPersonasConvive}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="observaciones">Observaciones (opcional)</label>
+            <textarea th:field="*{observaciones}" id="observaciones" class="form-control" maxlength="200"></textarea>
+            <div class="text-danger" th:if="${#fields.hasErrors('observaciones')}" th:errors="*{observaciones}"></div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="vivienda">Tipo de Vivienda</label>
+            <select th:field="*{tipoViviendaId}" id="vivienda" class="form-control" required>
+                <option value="">Seleccione...</option>
+                <option value="1">Casa</option>
+                <option value="2">Apartamento</option>
+                <option value="3">Finca</option>
+            </select>
+            <div class="text-danger" th:if="${#fields.hasErrors('tipoViviendaId')}" th:errors="*{tipoViviendaId}"></div>
+        </div>
+
+        <!-- ID del usuario adoptante (se enviará desde la sesión en el controlador) -->
+        <input type="hidden" th:field="*{usuarioId}" th:value="${usuarioId}">
+
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </div>
+    </form>
+
+    <!-- Modal éxito -->
+    <div th:if="${exito}">
+        <div class="modal fade show d-block" tabindex="-1" role="dialog" aria-labelledby="modalExitoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content border-success">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="modalExitoLabel">¡Solicitud enviada!</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        Tu solicitud de adopción está en proceso de validación. Te contactaremos pronto.
+                    </div>
+                    <div class="modal-footer">
+                        <a th:href="@{/adopcion}" class="btn btn-success">Volver a adopciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout}">
+<head>
+    <title>Formulario de Adopción - AdoptArte</title>
+</head>
+<body>
+    <main th:fragment="content">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <h2 class="text-center">Formulario de Adopción</h2>
+                        </div>
+                        <div class="card-body">
+                            <div th:if="${exito}" class="alert alert-success">
+                                ¡Formulario enviado exitosamente! Nos pondremos en contacto contigo pronto.
+                            </div>
+                            
+                            <form th:action="@{/formulario}" th:object="${formularioAdopcion}" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="ciudad" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" id="ciudad" th:field="*{ciudad}" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="localidad" class="form-label">Localidad</label>
+                                        <input type="text" class="form-control" id="localidad" th:field="*{localidad}" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="barrio" class="form-label">Barrio</label>
+                                        <input type="text" class="form-control" id="barrio" th:field="*{barrio}" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="ocupacion" class="form-label">Ocupación</label>
+                                        <input type="text" class="form-control" id="ocupacion" th:field="*{ocupacion}" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="numPersonasConvive" class="form-label">Número de personas con las que convive</label>
+                                    <input type="number" class="form-control" id="numPersonasConvive" th:field="*{numPersonasConvive}" min="1" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="observaciones" class="form-label">Observaciones</label>
+                                    <textarea class="form-control" id="observaciones" th:field="*{observaciones}" rows="4" placeholder="Cuéntanos más sobre tu situación y por qué quieres adoptar..."></textarea>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar Formulario</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

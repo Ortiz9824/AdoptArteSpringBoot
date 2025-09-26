@@ -1,0 +1,104 @@
+/* Asegurar que el body y html ocupen toda la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4f7ea8;
+}
+
+/* Contenedor principal centrado */
+.container.login-f {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Permite que el login se mantenga centrado */
+}
+
+/* Caja del login */
+.login-container {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 720px;
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulario */
+.login-form {
+    padding: 40px;
+    flex: 1;
+}
+
+/* Imagen al lado derecho */
+.login-image {
+    flex: 1;
+    background: url('/Imagenes/login.png') no-repeat center;
+    background-size: cover;
+    min-height: 300px;
+}
+
+/* Logo */
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Footer fijo en la parte inferior */
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    position: static;
+    bottom: 0;
+}
+
+/* Iconos dentro de input */
+.input-group-text {
+    background-color: #e9ecef;
+    border-left: none;
+}
+
+/* Botón con sombra naranja */
+.login-btn {
+    box-shadow: 0 4px 10px rgba(255, 115, 0, 0.5);
+    background-color: #4f7ea8;
+    border: none;
+}
+
+/* Botón de registro personalizado */
+.text-orange {
+    color: #ff6600;
+    border-color: #ff6600;
+}
+.text-orange:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Separador estético con punto */
+.separator {
+    text-align: center;
+    color: #ccc;
+    font-size: 24px;
+}
+
+/* Footer con color igual al encabezado */
+footer {
+    background-color: #4f7ea8;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Redes sociales */
+.social-icons a {
+    margin: 0 8px;
+    color: white;
+    font-size: 1.4rem;
+}
+
