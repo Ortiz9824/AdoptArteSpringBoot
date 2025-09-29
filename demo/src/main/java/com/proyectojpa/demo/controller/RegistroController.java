@@ -17,7 +17,7 @@ public class RegistroController {
     @Autowired
     private UsuarioRepository usuarioRepo;
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private BCryptPasswordEncoder passwordEncoder = new BCryptasswordEncoder();
 
     @GetMapping
     public String mostrarFormulario(Model model) {
